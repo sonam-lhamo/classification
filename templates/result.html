@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediction Result</title>
+  <link rel="stylesheet" href="/static/css/upload2.css">
+  <link rel="stylesheet" href="/static/css/up.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <a href="/index">
+      <img src="/static/image/image01.png" alt="" />
+    </a>
+
+  </div>
+  <nav class="nav">
+    <ul class="menu1">
+      <li class="li1"><a href="/index">Home</a></li>
+      <li class="li2"><a href="/about">About Us</a></li>
+      <li class="li3"><a href="/treatment">Treatment</a></li>
+    </ul>
+  </nav>
+  <button id="toggleNavbar" class="navbar-toggle">☰</button>
+
+  <nav class="navbar" id="navbar">
+    <button id="closeNavbar" class="close-icon">×</button>
+    <ul class="menu">
+      <li><a href="./index.html/home">Home</a></li>
+      <li><a href="./aboutus.html">About Us</a></li> <!-- Update to match your route in Flask -->
+      <li><a href="./treatment.html">Treatment</a></li> <!-- Update to match your route in Flask -->
+    </ul>
+  </nav>
+</header>
+
+<section class="upload_card">
+  <div class="upload-card">
+    <div class="content">
+      <h2 class='h2'>Classification Result</h2>
+
+      <div class="image-con2">
+        <img src="{{ image_path }}" alt="Uploaded Image" id="result_image">
+      </div>
+
+      <p>SVM has classified : {{ predicted_class_svm }}</p>
+      <p>CNN has classified : {{ predicted_class_cnn }}</p>
+
+      <div>
+        <button class="result-btn" onclick="window.location.href='/'">Back</button>
+        {% if predicted_class_svm in ['Potato_EarlyBlight'] %}
+            <button class='b2' onclick="window.location.href='/treatment/earlyblight'">Treatment</button>
+        {% elif predicted_class_svm in ['Potato_LateBlight'] %}
+            <button class='b2' onclick="window.location.href='/treatment/lateblight'">Treatment</button>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+
+<footer>
+  <div class="footer-container container"></div>
+  <div class="f-design">
+    <div class="f-design-txt container">
+      <p>2024 AgriTech All Right Reserved</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/static/js/script.js"></script>
+</body>
+</html>

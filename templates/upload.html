@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hidden Navbar</title>
+    <link rel="stylesheet" href="/static/css/upload2.css" />
+    <link rel="stylesheet" href="/static/css/up.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="/index">
+          <img src="/static/image/image01.png" alt="" />
+        </a>
+      </div>
+      <nav class="nav">
+        <ul class="menu1">
+          <li class="li1"><a href="/index">Home</a></li>
+          <li class="li2"><a href="/about">About Us</a></li>
+          <li class="li3"><a href="/treatment">Treatment</a></li>
+        </ul>
+      </nav>
+      <button id="toggleNavbar" class="navbar-toggle">☰</button> 
+
+      <nav class="navbar" id="navbar">
+        <button id="closeNavbar" class="close-icon">×</button>
+        <ul class="menu">
+          <li><a href="/index">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/treatment">Treatment</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="upload_card">
+      <div class="upload-card">
+        <div class="content">
+          <div class=img>
+            <img
+              id="uploaded-image"
+              src="/static/image/leave2.png"
+              alt="img"
+            />
+          </div>
+          <div class="button">
+            <button type="button" class="btn" onclick="location.href='/click'">Click</button>
+            <button id="upload-button" type="button" class="btn" style="margin-top: 10px" onclick="location.href='/upload23'">
+              Upload
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-container container"></div>
+      <div class="f-design">
+        <div class="f-design-txt container">
+          <p>2024 AgriTech All Right Reserved</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>

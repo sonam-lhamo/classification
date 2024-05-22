@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/imageCapture.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="camera-container">
+    <video id="video-feed" autoplay></video>
+    <button id="capture-btn">Capture</button>
+</div>
+
+<div class="click-wrapper">
+
+    <canvas id="canvas" class="canvas"></canvas>
+    <img id="captured-image" class="captured-image"/>
+
+    <div class="button-container">
+        <button id="submit-btn" style="display: none;" >Submit</button>
+        <button id="retake-btn" style="display: none;">Retake</button>
+    </div>
+</div>
+
+    <form id="capture-form" action="/classify_camera" method="POST">
+        <input type="hidden" name="image_data" id="image-data">
+    </form>
+
+
+    <script src="/static/js/imageCapture.js"></script>
+</body>
+
+</html>

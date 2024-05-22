@@ -1,0 +1,113 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); */
+
+
+
+header {
+  /* position: sticky; */
+  background-color: #4cd038;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+
+.logo img {
+  width: 90px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.navbar-toggle {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.navbar {
+  /* background:linear-gradient(to left, #5DD54B 80%, #999999 100%); */
+  background: linear-gradient(to bottom, #999,#5DD54B );
+  color: #fff;
+  display: none;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 25%;
+  z-index: 1;
+  overflow-y: auto; /* Enable vertical scroll if needed */
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 100px; /* Adjust top margin for space above close icon */
+}
+
+.menu li {
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 25px; /* Increased margin between list items */
+}
+
+.menu li:last-child {
+  margin-bottom: 0;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em; /* Increased font size for list items */
+}
+
+.close-icon {
+  font-size: 3em;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.nav {
+  display: flex; /* Make the nav a flex container */
+  align-items: center; /* Vertically center align items */
+}
+
+.menu1 {
+  list-style: none;
+  padding:0px;
+  margin: 0; /* Remove default margin */
+  display: flex; /* Make the menu a flex container */
+
+}
+
+.li1, .li2 {
+  margin-right: 80px; /* Add spacing between menu items */
+
+}
+.li3{
+  margin-right:18px;
+}
+li a {
+  color:#fff;
+  text-decoration: none;
+}  
+/* Responsive */
+@media(min-width:768px){
+/* .navbar {
+  display: flex; } */
+
+.navbar-toggle {
+  display: none; /* Hide the hamburger icon */
+}
+}
+@media(max-width:767px){
+.nav{
+  display: none;
+}
+}

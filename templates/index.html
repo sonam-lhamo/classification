@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hidden Navbar</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    
+    <a href="/index">
+      <img src="/static/image/image01.png" alt="" />
+    </a>
+
+  </div>
+  <nav class="nav">
+    <ul class="menu1">
+      <li class="li1"><a href="/index">Home</a></li>
+      <li class="li2"><a href="/about">About Us</a></li>
+      <li class="li3"><a href="/treatment">Treatment</a></li>
+    </ul>
+  </nav>
+  <button id="toggleNavbar" class="navbar-toggle">☰</button>
+
+  <nav class="navbar" id="navbar">
+    <button id="closeNavbar" class="close-icon">×</button>
+    <ul class="menu">
+      <li><a href="/index">Home</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/treatment">Treatment</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="home">
+  <div class="home_page">
+    <img src="/static/image/hero.png" alt="">
+  </div>
+  <div class="overlay">
+    <h1>Potato Disease Recognition</h1>
+    <p class="collection">
+        Upload an image of a potato plant leaf to identify diseases and get
+        treatment recommendations
+    </p>
+    <a href="/upload">
+      <button id="upload_btn">Upload</button>
+    </a>
+  </div>
+</section>
+
+<section id="collection">
+  <div>
+    <h2>How It Works</h2>
+  </div>
+  <div class="collections container">
+    <div class="content"> 
+      <div class="cont1">
+        <div>Simple Image Upload</div>
+        <div style="margin-top: 10px;">
+          <p style="padding-bottom:8px;">1. Click and upload</p>
+          <p>2 .Upload from gallery</p>
+        </div>
+      </div>
+      <div class="cont2">
+        <img class="content_img1" src="/static/image/download.png" alt="img" />
+      </div>
+    </div>
+    <div class="content2"> 
+      <div class="cont1">
+        <div>Accurate Diagnosis</div>
+        <p style="margin-top: 10px;">Our AI model classifies the disease and provides treatment recommendations</p>
+      </div>
+      <div class="cont2">
+        <img class="content_img2" src="/static/image/image2.png" alt="img" />
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-container container"></div>
+  <div class="f-design">
+    <div class="f-design-txt container">
+      <p>2024 AgriTech All Right Reserved</p>
+    </div>
+  </div>
+</footer>
+<script src="/static/js/script.js"></script>
+</body>
+</html>

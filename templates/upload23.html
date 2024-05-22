@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hidden Navbar</title>
+    <link rel="stylesheet" href="/static/css/upload2.css" />
+    <link rel="stylesheet" href="/static/css/up.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="/static/image/image01.png" alt="" />
+      </div>
+      <nav class="nav">
+        <ul class="menu1">
+          <li class="li1"><a href="/index">Home</a></li>
+          <li class="li2"><a href="/about">About Us</a></li>
+          <li class="li3"><a href="/treatment">Treatment</a></li>
+        </ul>
+      </nav>
+      <button id="toggleNavbar" class="navbar-toggle">☰</button>
+
+      <nav class="navbar" id="navbar">
+        <button id="closeNavbar" class="close-icon">×</button>
+        <ul class="menu">
+          <li><a href="/home">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <!-- Update to match your route in Flask -->
+          <li><a href="/treatment">Treatment</a></li>
+          <!-- Update to match your route in Flask -->
+        </ul>
+      </nav>
+    </header>
+
+    <section class="upload_card">
+      <div class="upload-card">
+        <div class="content">
+          <div class="image-con">
+              <img
+                id="uploaded-image"
+                
+                src="/static/image/leave2.png"
+                alt="Uploaded Image"/>
+            </div>
+            <div>
+              <form
+                id="upload-form"
+                action="/classify"
+                method="post"
+                enctype="multipart/form-data"
+              >
+
+              <label for="file-upload" class="custom-file-upload">
+                <i class="fas fa-cloud-upload-alt"></i> Choose File
+            </label>
+
+              <input type="file" id="file-upload" name="file" accept="image/*" style="display: none;">
+
+                <input type="hidden" id="image-path" name="image_path" />
+                <button
+                  type="submit"
+                  id="upload-button"
+                  class="btn"
+  
+                  
+                >
+                  Classify
+                </button>
+
+              </form>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-container container"></div>
+      <div class="f-design">
+        <div class="f-design-txt container">
+          <p>2024 AgriTech All Right Reserved</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document
+        .getElementById("file-upload")
+        .addEventListener("change", function () {
+          var input = document.getElementById("file-upload");
+
+          if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+              document.getElementById("uploaded-image").src = e.target.result;
+              document.getElementById("image-path").value = e.target.result; // Set the value of the hidden input field
+            };
+
+            reader.readAsDataURL(input.files[0]);
+          }
+        });
+
+      // Add change event listener to the file input
+      document
+        .getElementById("file-upload")
+        .addEventListener("change", function () {
+          // Get the file input element
+          var input = document.getElementById("file-upload");
+
+          // Check if a file is selected
+          if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+              // Set the uploaded image source to the FileReader result
+              document.getElementById("uploaded-image").src = e.target.result;
+            };
+
+            // Read the uploaded file as a Data URL
+            reader.readAsDataURL(input.files[0]);
+          }
+
+          //
+          // Get access to the camera
+          navigator.mediaDevices
+            .getUserMedia({ video: true })
+            .then(function (stream) {
+              var video = document.getElementById("video");
+              video.srcObject = stream;
+              video.play();
+            })
+            .catch(function (err) {
+              console.error("Error accessing the camera: ", err);
+            });
+
+          // Capture image from the video stream
+          document
+            .getElementById("capture-btn")
+            .addEventListener("click", function () {
+              var video = document.getElementById("video");
+              var canvas = document.createElement("canvas");
+              canvas.width = video.videoWidth;
+              canvas.height = video.videoHeight;
+              var context = canvas.getContext("2d");
+              context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+              // Convert the canvas image to a data URL
+              var imageDataURL = canvas.toDataURL("image/png");
+
+              // Do something with the captured image (e.g., display it or send it to the server)
+              console.log(imageDataURL);
+            });
+        });
+    </script>
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>

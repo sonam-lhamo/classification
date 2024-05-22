@@ -1,0 +1,262 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    font-family: Georgia, serif;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+
+}
+
+.column {
+    flex: 1;
+    padding: 0 10px;
+    display: flex;
+    width: 50%;
+}
+
+.sub-column {
+    flex: 1;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.image-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.rounded-image {
+    border-radius: 10px;
+    max-width: 100%;
+    
+}
+
+.text {
+    text-align: left;
+    background-color: #4CD038;
+    padding-left: 30px;
+    padding-right: 20px;
+    border-radius: 10px;
+    padding-top: 20px;
+}
+.column {
+     /* Background color */
+    color: white; /* Text color */
+    padding: 20px; /* Add padding for better readability */
+}
+
+/* Style for headings */
+.column h2, .column h3 {
+    color: white; /* Set heading text color to white */
+}
+
+/* Style for list items */
+.column li {
+    color: white; /* Set list item text color to white */
+    margin-bottom: 10px; /* Add margin between list items */
+}
+.footer{
+  margin-top:60px;
+}
+h1{
+  padding-bottom: 16px;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 480px) {
+    /* Phone Styles */
+  
+    .container {
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+  
+    .container-second{
+      flex-direction: column;
+    }
+  
+    .phone-column {
+      width: 100%;
+    }
+  
+    .phone-sub-column {
+      width: 100%;
+      padding: 0;
+    }
+  
+    .phone-image-row {
+      flex-direction: column;
+      /* Change image display to column */
+      gap: 10px;
+      /* Adjust gap between images */
+    }
+  
+    .phone-rounded-image {
+      width: 100%;
+      /* Make images fill width */
+      height: auto;
+      /* Ensure aspect ratio is maintained */
+    }
+  
+    .phone-text {
+      font-size: 0.8em;
+      /* Adjust font size */
+      padding: 5px;
+      /* Add padding for better spacing */
+    }
+    .column {
+      color: white;
+      padding: 20px;
+      flex-direction: column;
+  }
+  
+  .image-row{
+    height: 200px;
+    width: 100%;
+  }
+  
+  .image-row img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .close-icon {
+    font-size: 2em;
+    padding-bottom: 3px;
+    /* top: 5px; */
+    /* right: 10px; */
+  }
+  .footer-container {
+    padding: 0;
+  }
+  .f-design .f-design-txt {
+    /* padding: 25px 0; */
+    padding-top:25px;
+    /* padding-bottom:30px; */
+    font-size: 12px;
+    color: white;
+  }
+  .navbar {
+
+    background-color: #333;
+    color: #fff;
+  
+    height: 100%;
+    width: 100%;
+
+  }
+  /* Add this CSS to hide header content when navbar is open */
+  .navbar.active + header {
+    display: none;
+  }
+  .overlay.hide{
+    display: none;
+  }
+  }
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+  
+    /* Tablet Styles */
+    .tablet-column {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .tablet-sub-column {
+      width: 100%;
+      padding: 0;
+    }
+  
+    .tablet-image-row {
+      flex-direction: column;
+      /* Change image display to column */
+      gap: 10px;
+      /* Adjust gap between images */
+    }
+  
+    .tablet-rounded-image {
+      width: 100%;
+      /* Make images fill width */
+      height: auto;
+      /* Ensure aspect ratio is maintained */
+    }
+  
+    .tablet-text {
+      font-size: 0.9em;
+      /* Adjust font size */
+      padding: 10px;
+      /* Add padding for better spacing */
+    }
+  }
+  
+  @media only screen and (min-width: 769px) {
+  
+    /* Desktop Styles */
+    .desktop-column {
+      flex: 1 1 50%;
+      width: 50%;
+      padding: 0 10px;
+    }
+  
+    .desktop-sub-column {
+      flex: 1;
+      width: auto;
+      padding: 10px;
+    }
+  
+    .desktop-image-row {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .desktop-rounded-image {
+      height: 100%;
+    }
+  
+    /* Adjust font size for larger screens if necessary */
+  }
+  @media only screen and (max-width: 431px) {
+  
+    /* Desktop Styles */
+    .desktop-column {
+      flex: 1 1 100%;
+      width: 100%;
+      padding: 0 10px;
+    }
+  
+    .desktop-sub-column {
+      flex: 1;
+      width: auto;
+      padding: 10px;
+    }
+  
+    .desktop-image-row {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .desktop-rounded-image {
+      height: 100%;
+    }
+    .column {
+      padding:0px;
+    }
+    .footer{
+      margin-top:0px;
+    }
+    h1{
+      font-size:24px;
+    }
+    /* Adjust font size for larger screens if necessary */
+  }
+  
